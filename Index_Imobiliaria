@@ -1,0 +1,45 @@
+<apex:page>
+    
+    <!-- Código em CSS -->
+    
+    <style>
+        #conteudo{
+        margin-top:10%; 
+        margin-left:10%;
+        margin-right:10%;
+        }
+        #form1{
+        width:500px;
+        border:solid;
+        }
+    </style>
+    
+    <!-- Inicio do conteúdo -->
+    
+    <div id="conteudo">
+        <center>  
+            <!--  Inicio do formulário -->
+            <div id="form1">
+                <apex:form>
+                    <apex:pageBlock title="Cadastrar Imóvel" mode="edit">
+                        <!-- cria um painel com duas colunas onde esta o texto(label) e os campos(fields) -->
+                        <apex:panelGrid columns="2">
+                            Quartos: <apex:inputText />
+                            Sala: <apex:inputText />
+                            Cozinha: <apex:inputText />
+                            Copa: <apex:inputText />
+                            Banheiros: <apex:inputText />
+                            Suite: <apex:inputText />
+                            Vagas de garagem: <apex:inputText />
+                            Valor do imóvel: <apex:inputText />
+                        </apex:panelGrid>
+                        <center>
+                            <br/> <!-- adiciona espaco entre o botão -->
+                            <apex:commandButton value="SALVAR"/>
+                        </center>
+                    </apex:pageBlock>
+                </apex:form>
+            </div>
+        </center>
+    </div>
+</apex:page>
