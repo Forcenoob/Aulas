@@ -1,45 +1,39 @@
-<apex:page>
-    
-    <!-- Código em CSS -->
-    
+<apex:page >
+    <!-- Definições de estilo CSS -->
     <style>
         #conteudo{
-        margin-top:10%; 
+        margin-top:10%;
         margin-left:10%;
         margin-right:10%;
         }
         #form1{
-        width:500px;
-        border:solid;
-        }
+        width:300px;
+        }        
     </style>
     
-    <!-- Inicio do conteúdo -->
+    <!--Inicio do conteúdo -->
     
     <div id="conteudo">
-        <center>  
-            <!--  Inicio do formulário -->
+        <center>
             <div id="form1">
-                <apex:form>
-                    <apex:pageBlock title="Cadastrar Imóvel" mode="edit">
-                        <!-- cria um painel com duas colunas onde esta o texto(label) e os campos(fields) -->
+                <apex:form >
+                    <apex:pageBlock title="Cadastrar Imóveis">  
                         <apex:panelGrid columns="2">
                             Quartos: <apex:inputText />
+                            Banheiros: <apex:inputText />
                             Sala: <apex:inputText />
                             Cozinha: <apex:inputText />
                             Copa: <apex:inputText />
-                            Banheiros: <apex:inputText />
                             Suite: <apex:inputText />
                             Vagas de garagem: <apex:inputText />
-                            Valor do imóvel: <apex:inputText />
+                            Valor: <apex:inputText />
                         </apex:panelGrid>
-                        <center>
-                            <br/> <!-- adiciona espaco entre o botão -->
-                            <apex:commandButton value="SALVAR"/>
-                        </center>
+                        <br/>
+                        <apex:commandButton value="SALVAR"/>
                     </apex:pageBlock>
                 </apex:form>
             </div>
         </center>
-    </div>
+    </div>    
+    
 </apex:page>
