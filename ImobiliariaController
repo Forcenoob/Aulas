@@ -1,0 +1,32 @@
+public class ImobiliariaController {
+    
+    //Definições das variáveis
+    
+    public integer quartos {get; set;}
+    public integer banheiros {get; set;}
+    public integer sala {get; set;}
+    public integer cozinha {get; set;}
+    public integer copa {get; set;}
+    public integer suite {get; set;}
+    public integer vagas {get; set;}
+    public integer valor {get; set;}
+    
+    //Método salvar
+    
+    public void salvarImoveis(){
+       
+        Imoveis__c objImoveis = new Imoveis__c(); 
+        
+        objImoveis.Quartos__c = quartos;
+        objImoveis.Sala__c = sala;
+        objImoveis.Cozinha__c = cozinha;
+        objImoveis.Copa__c = copa;
+        objImoveis.Suite__c = suite;
+        objImoveis.Garagem__c = vagas;
+        objImoveis.Valor__c = valor;
+		
+        insert objImoveis;		        
+        
+    }
+    
+}
