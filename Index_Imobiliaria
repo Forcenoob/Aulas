@@ -27,6 +27,13 @@
                             Suite: <apex:inputText value="{!suite}"/>
                             Vagas de garagem: <apex:inputText value="{!vagas}"/>
                             Valor: <apex:inputText value="{!valor}"/>
+                            <!-- Campo picklist --> 
+                            Tipo do Imóvel:
+                            <apex:selectList value="{!tipoImovel}" multiselect="false" size="1" required="true">
+                                <!-- chamada para o método que preenche as opções sem utilizar o GET do método da controller-->
+                               <apex:selectOptions value="{!MinhasOpcoes}" /> 
+                                
+                            </apex:selectList>
                             
                         </apex:panelGrid>
                         <br/>
