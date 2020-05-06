@@ -10,6 +10,36 @@ public class ImobiliariaController {
     public integer suite {get; set;}
     public integer vagas {get; set;}
     public integer valor {get; set;}
+    public String tipoImovel {get; set;}
+    
+    //Método picklist    
+    public List<SelectOption> getMinhasOpcoes(){
+        
+        //Mapear o campo de lista de seleção/picklist que desejo listar    
+        Schema.DescribeFieldResult describeResult = Imoveis__c.TipoImovel__c.getDescribe();
+        
+        //listar as opções válidas dentro do meu campo
+        List<Schema.PicklistEntry> entries = describeResult.getPickListValues();
+        
+        //Cria variável de retorno do tipo de lista para o objeto SelectOption       
+        List<SelectOption> optionsToReturn = new List<SelectOption>();
+        
+        //Adiciona as opções do campo listadas
+        for(Schema.PicklistEntry pEntry : entries){
+            
+            //se a opção esta ativa
+            //Ou pode aplicar o filtro que quiser, caso não queira mostrar todas as opções
+            if(pEntry.isActive()){
+                //Adiciona o nome e o valor na variável retorno
+                optionsToReturn.add(new SelectOption(pEntry.getValue(), pEntry.getLabel()));
+            }
+            
+        }
+        //Retorna a lista de selectOption criamos na variável de retorno
+        return optionsToReturn;     
+        
+    }    
+    
     
     //Método salvar
     
@@ -24,6 +54,7 @@ public class ImobiliariaController {
         objImoveis.Suite__c = suite;
         objImoveis.Garagem__c = vagas;
         objImoveis.Valor__c = valor;
+	objImoveis.TipoImovel__c = tipoImovel;
 		
         insert objImoveis;		        
         
